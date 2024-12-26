@@ -11,12 +11,13 @@ class ThemeManager {
       type: BottomNavigationBarType.fixed,
       selectedLabelStyle: TextStyle(fontFamily: 'Janaa'),
     ),
-    scaffoldBackgroundColor: ColorManager.darkGray,
+    scaffoldBackgroundColor: ColorManager.transperent,
     appBarTheme: const AppBarTheme(
       backgroundColor: ColorManager.darkGray,
       iconTheme: IconThemeData(
         color: ColorManager.goldColor,
       ),
     ),
+    fontFamily: 'Janaa',
   );
 }
