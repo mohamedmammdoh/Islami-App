@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/core/assests_manager.dart';
+import 'package:islamiapp/core/color_manager.dart';
 import 'package:islamiapp/features/HadithFeature/pages/hadith_page.dart';
 import 'package:islamiapp/features/QuranFeature/pages/quran_page.dart';
 import 'package:islamiapp/features/RadioFeature/pages/radio_page.dart';
@@ -50,7 +51,7 @@ class _LayoutBodyState extends State<LayoutBody> {
                 child: Image.asset(AssestsManager.appBarBg),
               )),
           Scaffold(
-            backgroundColor: Colors.transparent,
+            backgroundColor: ColorManager.transperent,
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: currentIndex,
               onTap: (value) {
@@ -88,14 +89,17 @@ class _LayoutBodyState extends State<LayoutBody> {
     );
   }
 
-  Widget customBottomNavigationBarItem(
-      {required int index, required String image}) {
+  Widget customBottomNavigationBarItem({
+    required int index,
+    required String image,
+  }) {
+    var mediaQuery = MediaQuery.of(context).size;
     return currentIndex == index
         ? Container(
-            width: 59,
-            height: 34,
+            width: mediaQuery.width * 0.17,
+            height: mediaQuery.height * 0.034,
             decoration: const BoxDecoration(
-                color: Color(0x199202020),
+                color: ColorManager.bottomNavBarSelectedColor,
                 borderRadius: BorderRadius.all(Radius.circular(66))),
             child: ImageIcon(AssetImage(image)),
           )

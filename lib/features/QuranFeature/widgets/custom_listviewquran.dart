@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/core/assests_manager.dart';
 import 'package:islamiapp/core/color_manager.dart';
+import 'package:islamiapp/core/styles_manager.dart';
 import 'package:islamiapp/features/QuranFeature/models/sura_model.dart';
 import 'package:islamiapp/features/QuranFeature/pages/Quran_details_page.dart';
 
@@ -29,10 +30,7 @@ class CustomListviewquran extends StatelessWidget {
                   Image.asset(AssestsManager.suraNumber),
                   Text(
                     '${index + 1}',
-                    style: const TextStyle(
-                        color: ColorManager.white,
-                        fontSize: 20,
-                        fontFamily: 'Janaa'),
+                    style: StylesManager.textStyles20White,
                   ),
                 ],
               ),
@@ -42,31 +40,20 @@ class CustomListviewquran extends StatelessWidget {
                 children: [
                   Text(
                     SuraModel.englishQuranSurahs[index],
-                    style: const TextStyle(
-                      color: ColorManager.white,
-                      fontFamily: 'Janaa',
-                      fontSize: 20,
+                    style: StylesManager.textStyles20White.copyWith(
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                   Text(
                     '${SuraModel.ayaNumber[index]} verses',
-                    style: const TextStyle(
-                      color: ColorManager.white,
-                      fontFamily: 'Janaa',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: StylesManager.textStyles14White,
                   ),
                 ],
               ),
               const Spacer(),
               Text(
                 SuraModel.arabicAuranSuras[index],
-                style: const TextStyle(
-                  color: ColorManager.white,
-                  fontFamily: 'Janaa',
-                  fontSize: 20,
+                style: StylesManager.textStyles20White.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
               ),

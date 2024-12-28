@@ -6,4 +6,5 @@ abstract class ColorManager {
   static const Color white = Color(0xFFFFFFFF);
   static const Color whiteGld = Color(0xFFFEFFE8);
   static const Color transperent = Colors.transparent;
+  static const Color bottomNavBarSelectedColor = Color(0x199202020);
 }

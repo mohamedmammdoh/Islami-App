@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/core/assests_manager.dart';
 import 'package:islamiapp/core/color_manager.dart';
+import 'package:islamiapp/core/styles_manager.dart';
 
 class CustomMostrecentlycard extends StatelessWidget {
   const CustomMostrecentlycard({super.key});
@@ -25,28 +26,16 @@ class CustomMostrecentlycard extends StatelessWidget {
                 children: [
                   const Text(
                     'Al-Anbiya',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Janaa',
-                    ),
+                    style: StylesManager.textStyles24bold,
                   ),
                   const Text(
                     'الأنبياء',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Janaa',
-                    ),
+                    style: StylesManager.textStyles24bold,
                   ),
                   SizedBox(height: mediaQuery.height * 0.02),
                   const Text(
                     '112 Verses',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'Janaa',
-                    ),
+                    style: StylesManager.textStyles14White,
                   ),
                 ],
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/core/assests_manager.dart';
 import 'package:islamiapp/core/color_manager.dart';
+import 'package:islamiapp/core/styles_manager.dart';
 
 class CustomTextFiled extends StatelessWidget {
   const CustomTextFiled({super.key});
@@ -31,12 +32,7 @@ class CustomTextFiled extends StatelessWidget {
           color: ColorManager.goldColor,
         ),
         hintText: 'Sura Name',
-        hintStyle: TextStyle(
-          color: ColorManager.whiteGld,
-          fontFamily: 'Janaa',
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-        ),
+        hintStyle: StylesManager.textStyle16WG,
       ),
     );
   }

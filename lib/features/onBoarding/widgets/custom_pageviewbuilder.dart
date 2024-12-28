@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islamiapp/core/color_manager.dart';
+import 'package:islamiapp/core/styles_manager.dart';
 import 'package:islamiapp/features/onBoarding/models/onboarding_model.dart';
 
 class CustomPageviewbuilder extends StatelessWidget {
@@ -20,29 +20,17 @@ class CustomPageviewbuilder extends StatelessWidget {
             padding: const EdgeInsets.only(top: 120.0),
             child: Image.asset(OnboardingModel.pages[index].image),
           ),
-          const SizedBox(
-            height: 40,
-          ),
+          const SizedBox(height: 40),
           Text(
             OnboardingModel.pages[index].text,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: ColorManager.goldColor,
-              fontSize: 24,
-              fontFamily: 'Janaa',
-              fontWeight: FontWeight.w700,
-            ),
+            style: StylesManager.textStyle24Primary,
           ),
           const SizedBox(height: 30),
           Text(
             textAlign: TextAlign.center,
             OnboardingModel.pages[index].description,
-            style: const TextStyle(
-              color: ColorManager.goldColor,
-              fontSize: 20,
-              fontFamily: 'Janaa',
-              fontWeight: FontWeight.w700,
-            ),
+            style: StylesManager.textStyle20BoldPrimary,
           ),
           const SizedBox(height: 10),
         ],

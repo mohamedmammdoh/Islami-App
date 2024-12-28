@@ -10,14 +10,17 @@ class ThemeManager {
       showUnselectedLabels: false,
       type: BottomNavigationBarType.fixed,
       selectedLabelStyle: TextStyle(fontFamily: 'Janaa'),
+      unselectedLabelStyle: TextStyle(fontFamily: 'Janaa'),
     ),
     scaffoldBackgroundColor: ColorManager.transperent,
     appBarTheme: const AppBarTheme(
       backgroundColor: ColorManager.darkGray,
+      titleTextStyle: TextStyle(
+        fontFamily: 'Janaa',
+      ),
       iconTheme: IconThemeData(
         color: ColorManager.goldColor,
       ),
     ),
-    fontFamily: 'Janaa',
   );
 }

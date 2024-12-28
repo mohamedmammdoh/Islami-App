@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islamiapp/core/color_manager.dart';
+import 'package:islamiapp/core/styles_manager.dart';
 import 'package:islamiapp/features/QuranFeature/widgets/custom_listviewmostrecently.dart';
 import 'package:islamiapp/features/QuranFeature/widgets/custom_listviewquran.dart';
 import 'package:islamiapp/features/layout/widgets/custom_textfield.dart';
@@ -18,22 +18,14 @@ class QuranPage extends StatelessWidget {
           SizedBox(height: mediaQuery.height * 0.02),
           const Text(
             'Most Recently',
-            style: TextStyle(
-              color: ColorManager.whiteGld,
-              fontFamily: 'Janaa',
-              fontSize: 16,
-            ),
+            style: StylesManager.textStyle16WG,
           ),
           SizedBox(height: mediaQuery.height * 0.02),
           const CustomListViewMostRecently(),
           SizedBox(height: mediaQuery.height * 0.02),
           const Text(
             'Suras List',
-            style: TextStyle(
-              color: ColorManager.whiteGld,
-              fontFamily: 'Janaa',
-              fontSize: 16,
-            ),
+            style: StylesManager.textStyle16WG,
           ),
           // ListView.builder(itemBuilder: )
           SizedBox(height: mediaQuery.height * 0.01),

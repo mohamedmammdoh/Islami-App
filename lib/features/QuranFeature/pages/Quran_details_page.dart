@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/core/assests_manager.dart';
 import 'package:islamiapp/core/color_manager.dart';
+import 'package:islamiapp/core/styles_manager.dart';
 import 'package:islamiapp/features/QuranFeature/models/sura_model.dart';
 
 class QuranDetails extends StatelessWidget {
@@ -12,16 +13,12 @@ class QuranDetails extends StatelessWidget {
     var args = ModalRoute.of(context)!.settings.arguments as SuraModel;
 
     return Scaffold(
+      backgroundColor: ColorManager.darkGray,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
           args.suraNameEn,
-          style: const TextStyle(
-            fontSize: 20,
-            color: ColorManager.goldColor,
-            fontFamily: 'Janaa',
-            fontWeight: FontWeight.w700,
-          ),
+          style: StylesManager.textStyle16Primary,
         ),
       ),
       body: Stack(
@@ -36,11 +33,7 @@ class QuranDetails extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Text(
               args.suraNameAr,
-              style: const TextStyle(
-                fontSize: 24,
-                color: ColorManager.goldColor,
-                fontFamily: 'Janaa',
-              ),
+              style: StylesManager.textStyle24Primary,
             ),
           )
         ],
