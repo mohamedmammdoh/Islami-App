@@ -31,9 +31,12 @@ class QuranDetails extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.topCenter,
-            child: Text(
-              args.suraNameAr,
-              style: StylesManager.textStyle24Primary,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 16.0),
+              child: Text(
+                args.suraNameAr,
+                style: StylesManager.textStyle24Primary,
+              ),
             ),
           )
         ],
