@@ -2,18 +2,23 @@ class SuraModel {
   final String suraNameAr;
   final String suraNameEn;
   final String versesNumber;
+  final int index;
 
   SuraModel({
     required this.suraNameAr,
     required this.suraNameEn,
     required this.versesNumber,
+    required this.index,
   });
 
-  static getSuraModel({required int index}) {
+  static getSuraModel({
+    required int index,
+  }) {
     return SuraModel(
       suraNameAr: arabicAuranSuras[index],
       suraNameEn: englishQuranSurahs[index],
       versesNumber: ayaNumber[index],
+      index: index,
     );
   }
 

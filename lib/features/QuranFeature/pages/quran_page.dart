@@ -11,8 +11,10 @@ class QuranPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size mediaQuery = MediaQuery.of(context).size;
     return Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
           SizedBox(height: mediaQuery.height * 0.25),
           const CustomTextFiled(),
           SizedBox(height: mediaQuery.height * 0.02),
@@ -30,6 +32,8 @@ class QuranPage extends StatelessWidget {
           // ListView.builder(itemBuilder: )
           SizedBox(height: mediaQuery.height * 0.01),
           const CustomListviewquran(),
-        ]));
+        ],
+      ),
+    );
   }
 }

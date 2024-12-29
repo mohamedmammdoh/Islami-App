@@ -10,6 +10,7 @@ class CustomTextFiled extends StatelessWidget {
   Widget build(BuildContext context) {
     return const TextField(
       cursorColor: ColorManager.white,
+      style: StylesManager.textStyle16WG,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
