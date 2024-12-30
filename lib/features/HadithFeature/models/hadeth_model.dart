@@ -2,5 +2,10 @@ class HadethModel {
   final String hadethName;
 
   final List<String> hadethContent;
-  HadethModel({required this.hadethName, required this.hadethContent});
+
+  final int index;
+  HadethModel(
+      {required this.hadethName,
+      required this.hadethContent,
+      required this.index});
 }

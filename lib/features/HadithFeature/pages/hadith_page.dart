@@ -5,6 +5,7 @@ import 'package:islamiapp/core/assests_manager.dart';
 import 'package:islamiapp/core/color_manager.dart';
 import 'package:islamiapp/core/styles_manager.dart';
 import 'package:islamiapp/features/HadithFeature/models/hadeth_model.dart';
+import 'package:islamiapp/features/HadithFeature/pages/hadethdetails_page.dart';
 
 class HadithPage extends StatefulWidget {
   const HadithPage({super.key});
@@ -15,7 +16,6 @@ class HadithPage extends StatefulWidget {
 
 class _HadithPageState extends State<HadithPage> {
   List<HadethModel> hadethList = [];
-  bool isLoading = true;
   @override
   void initState() {
     super.initState();
@@ -26,7 +26,7 @@ class _HadithPageState extends State<HadithPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: isLoading
+        body: hadethList.isEmpty
             ? const Center(
                 // Show loading indicator while data is loading
                 child: CircularProgressIndicator(
@@ -39,54 +39,66 @@ class _HadithPageState extends State<HadithPage> {
                   CarouselSlider.builder(
                     itemCount: hadethList.length,
                     itemBuilder: (context, index, realIndex) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          color: ColorManager.goldColor,
-                          borderRadius: BorderRadius.circular(20),
+                      return GestureDetector(
+                        onTap: () => Navigator.pushNamed(
+                          context,
+                          HadethDetailsPage.routeName,
+                          arguments: HadethModel(
+                            hadethName: hadethList[index].hadethName,
+                            hadethContent: hadethList[index].hadethContent,
+                            index: index,
+                          ),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Align(
-                                alignment: Alignment.topRight,
-                                child: Image.asset(AssestsManager.cornerRight),
-                              ),
-                              Align(
-                                alignment: Alignment.topLeft,
-                                child: Image.asset(AssestsManager.cornerLeft),
-                              ),
-                              Align(
-                                child: Image.asset(
-                                  AssestsManager.hadethBG,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: ColorManager.goldColor,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Stack(
+                              children: [
+                                Align(
+                                  alignment: Alignment.topRight,
+                                  child:
+                                      Image.asset(AssestsManager.cornerRight),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 10.0),
-                                child: ListView(
-                                  children: [
-                                    Text(
-                                      hadethList[index].hadethName,
-                                      textAlign: TextAlign.center,
-                                      style: StylesManager.textStyles24bold,
-                                    ),
-                                    const SizedBox(height: 10),
-                                    Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Text(
-                                        hadethList[index]
-                                            .hadethContent
-                                            .join(''),
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Image.asset(AssestsManager.cornerLeft),
+                                ),
+                                Align(
+                                  child: Image.asset(
+                                    AssestsManager.hadethBG,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 20.0, horizontal: 10.0),
+                                  child: ListView(
+                                    children: [
+                                      Text(
+                                        hadethList[index].hadethName,
                                         textAlign: TextAlign.center,
-                                        style:
-                                            StylesManager.textStyle16darkGray,
+                                        style: StylesManager.textStyles24bold,
                                       ),
-                                    ),
-                                  ],
+                                      const SizedBox(height: 10),
+                                      Padding(
+                                        padding: const EdgeInsets.all(10.0),
+                                        child: Text(
+                                          hadethList[index]
+                                              .hadethContent
+                                              .join(''),
+                                          textAlign: TextAlign.center,
+                                          style:
+                                              StylesManager.textStyle16darkGray,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       );
@@ -121,11 +133,9 @@ class _HadithPageState extends State<HadithPage> {
       String title = hadethVerses[0];
       hadethVerses.removeAt(0);
       HadethModel hadethModel =
-          HadethModel(hadethName: title, hadethContent: hadethVerses);
+          HadethModel(hadethName: title, hadethContent: hadethVerses, index: i);
       hadethList.add(hadethModel);
     }
-    setState(() {
-      isLoading = false;
-    });
+    setState(() {});
   }
 }

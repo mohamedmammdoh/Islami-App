@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/core/theme.dart';
+import 'package:islamiapp/features/HadithFeature/pages/hadethdetails_page.dart';
 import 'package:islamiapp/features/QuranFeature/pages/Quran_details_page.dart';
 import 'package:islamiapp/features/layout/pages/layout_page.dart';
 import 'package:islamiapp/features/onBoarding/pages/onboarding_page.dart';
@@ -23,6 +24,7 @@ class IslamiApp extends StatelessWidget {
         OnBoardingPage.routeName: (context) => const OnBoardingPage(),
         LayoutPage.routeName: (context) => const LayoutPage(),
         QuranDetails.routeName: (context) => const QuranDetails(),
+        HadethDetailsPage.routeName: (context) => const HadethDetailsPage(),
       },
     );
   }
