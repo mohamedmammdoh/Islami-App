@@ -22,7 +22,7 @@ class IslamiApp extends StatelessWidget {
         SplashPage.routeName: (context) => const SplashPage(),
         OnBoardingPage.routeName: (context) => const OnBoardingPage(),
         LayoutPage.routeName: (context) => const LayoutPage(),
-        QuranDetails.routeName: (context) => QuranDetails(),
+        QuranDetails.routeName: (context) => const QuranDetails(),
       },
     );
   }

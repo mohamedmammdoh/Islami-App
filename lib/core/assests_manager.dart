@@ -28,4 +28,7 @@ abstract class AssestsManager {
   static const String mostRecently = 'assests/images/most_recently.png';
   static const String suraNumber = 'assests/images/Vector.png';
   static const String groupBg = 'assests/images/Group 39.png';
+  static const String hadethBG = 'assests/images/HadithCardBackGround.png';
+  static const String cornerRight = 'assests/images/corner_right.png';
+  static const String cornerLeft = 'assests/images/corner_left.png';
 }

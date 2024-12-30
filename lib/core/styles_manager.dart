@@ -18,6 +18,12 @@ class StylesManager {
     fontFamily: 'Janaa',
     fontSize: 16,
   );
+  static const textStyle16darkGray = TextStyle(
+    color: ColorManager.darkGray,
+    fontFamily: 'Janaa',
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+  );
 
   static const textStyle24Primary = TextStyle(
     fontSize: 24,

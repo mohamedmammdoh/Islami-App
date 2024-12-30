@@ -48,7 +48,9 @@ class _LayoutBodyState extends State<LayoutBody> {
               alignment: Alignment.topCenter,
               child: Padding(
                 padding: const EdgeInsets.only(top: 20.0),
-                child: Image.asset(AssestsManager.appBarBg),
+                child: Image.asset(
+                  AssestsManager.appBarBg,
+                ),
               )),
           Scaffold(
             backgroundColor: ColorManager.transperent,
