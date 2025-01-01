@@ -19,11 +19,10 @@ class StylesManager {
     fontSize: 16,
   );
   static const textStyle16darkGray = TextStyle(
-    color: ColorManager.darkGray,
-    fontFamily: 'Janaa',
-    fontSize: 16,
-    fontWeight: FontWeight.bold,
-  );
+      color: ColorManager.darkGray,
+      fontFamily: 'Janaa',
+      fontSize: 16,
+      fontWeight: FontWeight.bold);
 
   static const textStyle24Primary = TextStyle(
     fontSize: 24,
@@ -44,6 +43,12 @@ class StylesManager {
   static const textStyles24bold = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
+    fontFamily: 'Janaa',
+  );
+  static const textStyles36White = TextStyle(
+    color: ColorManager.white,
+    fontSize: 36,
+    fontWeight: FontWeight.w700,
     fontFamily: 'Janaa',
   );
 }

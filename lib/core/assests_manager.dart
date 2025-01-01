@@ -31,4 +31,6 @@ abstract class AssestsManager {
   static const String hadethBG = 'assests/images/HadithCardBackGround.png';
   static const String cornerRight = 'assests/images/corner_right.png';
   static const String cornerLeft = 'assests/images/corner_left.png';
+  static const String sebhaRoatated = 'assests/images/sebharoatated.png';
+  static const String sebhaaa = 'assests/images/sebhaaaaaaaaaa.png';
 }
