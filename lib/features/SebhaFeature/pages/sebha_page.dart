@@ -41,17 +41,17 @@ class _SebhaPageState extends State<SebhaPage> {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQurey = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const SizedBox(height: 200),
+          SizedBox(height: mediaQurey.height * 0.24),
           const Text(
             textAlign: TextAlign.center,
             'سَبِّحِ اسْمَ رَبِّكَ الأعلى ',
             style: StylesManager.textStyles36White,
           ),
-          const SizedBox(height: 50),
           Stack(
             alignment: Alignment.center,
             children: [
@@ -59,8 +59,20 @@ class _SebhaPageState extends State<SebhaPage> {
                 onTap: incrementCounter,
                 child: Transform.rotate(
                   angle: rotationAngle,
-                  child: Image.asset(
-                    AssestsManager.sebhaRoatated,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Container(
+                      width: 380,
+                      height: 470, //450,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(AssestsManager.sebhaRoatated))),
+                      child: Image.asset(
+                        alignment: Alignment.topCenter,
+                        AssestsManager.sebhaaa,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -70,7 +82,7 @@ class _SebhaPageState extends State<SebhaPage> {
                     duas[currentDuaIndex],
                     style: StylesManager.textStyles36White,
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: mediaQurey.height * 0.03),
                   Text(
                     counter.toString(),
                     style: StylesManager.textStyles36White,
